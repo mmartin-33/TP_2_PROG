@@ -57,3 +57,30 @@ button:hover{
     margin: 10px 0;
     background-color: white;
 }
+
+
+
+
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tarjeta{
+    width: 200px;
+    border: 2px solid black;
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+
+
+.seleccionada{
+    background-color: gold;
+    border-color: red;
+}
