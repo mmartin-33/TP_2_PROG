@@ -16,6 +16,61 @@
     <a href="listado.html">Listado</a>
 </nav>
 
+<h1>Listado de Productos</h1>
+
+<button id="btnTodos">Mostrar todos</button>
+<button id="btnBebidas">Bebidas</button>
+
+<div id="contenedor"></div>
+
+<script>
+const productos = [
+    {nombre: "Jugo", categoria: "Bebidas"},
+    {nombre: "Gaseosa", categoria: "Bebidas"},
+    {nombre: "Agua", categoria: "Bebidas"},
+    {nombre: "Pan", categoria: "Comida"},
+    {nombre: "Galletitas", categoria: "Comida"},
+    {nombre: "Tostadas", categoria: "Comida"}
+];
+
+const contenedor = document.getElementById("contenedor");
+
+function mostrarProductos(lista) {
+
+    contenedor.innerHTML = "";
+
+    lista.forEach(producto => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        card.innerHTML = `
+            <h3>${producto.nombre}</h3>
+            <p>${producto.categoria}</p>
+        `;
+
+        contenedor.appendChild(card);
+    });
+}
+
+mostrarProductos(productos);
+
+document
+    .getElementById("btnTodos")
+    .addEventListener("click", () => {
+        mostrarProductos(productos);
+    });
+
+document
+    .getElementById("btnBebidas")
+    .addEventListener("click", () => {
+
+        const bebidas = productos.filter(producto =>
+            producto.categoria === "Bebidas"
+        );
+
+        mostrarProductos(bebidas);
+    });
+</script>
 
 
 </body>

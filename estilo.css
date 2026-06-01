@@ -43,6 +43,7 @@ button:hover{
 
 
 
+
 #listaMeriendas{
     border: 2px solid black;
     padding: 20px;
@@ -78,9 +79,25 @@ button:hover{
     border-radius: 10px;
 }
 
-
-
 .seleccionada{
     background-color: gold;
     border-color: red;
+}
+
+
+
+
+#contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card{
+    width: 220px;
+    border: 2px solid black;
+    padding: 15px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 10px;
 }
