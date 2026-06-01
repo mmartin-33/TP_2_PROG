@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="/estilo.css">
 
 </head>
 <body>
@@ -16,6 +17,41 @@
 </nav>
 
 
+<h1>Lista de Meriendas</h1>
+
+<div id="listaMeriendas"></div>
+
+<button id="btnCantidad">Mostrar cantidad</button>
+
+<p id="resultado"></p>
+
+<script>
+const meriendas = [
+    "Tostadas",
+    "Yogur",
+    "Frutas",
+    "Galletitas",
+    "Licuado"
+];
+
+const contenedor = document.getElementById("listaMeriendas");
+
+meriendas.forEach(merienda => {
+    const div = document.createElement("div");
+    div.classList.add("item");
+    div.textContent = merienda;
+    contenedor.appendChild(div);
+});
+
+function mostrarCantidad() {
+    document.getElementById("resultado").textContent =
+        `Cantidad de meriendas: ${meriendas.length}`;
+}
+
+document
+    .getElementById("btnCantidad")
+    .addEventListener("click", mostrarCantidad);
+</script>
 
 
     
